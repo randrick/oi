@@ -1,0 +1,11 @@
+/cams/HikVision/*.jpg
+models/
+processed/
+.devcontainer/
+.vscode/
+output/
+*.log
+*.tmp
+*.bak
+.env
+__pycache__/

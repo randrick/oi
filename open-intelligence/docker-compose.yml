@@ -1,0 +1,195 @@
+services:
+
+  app-py:
+    container_name: app-py
+    # deploy:
+    #   replicas: 2
+    build:
+      context: ./python
+      dockerfile: ../docker-support/app.Dockerfile
+    volumes:
+      - ./python:/app
+      - ../cams:/input
+      - ../output:/output
+    runtime: nvidia
+    environment:
+      - DB_USER=postgres
+      - DB_HOST=192.168.164.189
+      - DB_DATABASE=intelligence
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+      # rwa - trying to stop qt error
+      - QT_QPA_PLATFORM=offscreen
+
+  new-images-py:
+    container_name: new-images-py
+    # deploy:
+    #   replicas: 2
+    build:
+      context: ./python
+      dockerfile: ../docker-support/ni.Dockerfile
+    # command: >
+    #   python -m debugpy --listen 0.0.0.0:5678 --wait-for-client New_image_object_detection.py
+    # ports:
+    #   - "5678:5678"
+    volumes:
+      - ./python:/app
+      - ../cams:/input
+      - ../output:/output
+    runtime: nvidia
+    environment:
+      - DB_USER=postgres
+      - DB_HOST=192.168.164.189
+      - DB_DATABASE=intelligence
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+      # rwa - trying to stop qt error
+      - QT_QPA_PLATFORM=offscreen
+  # video-py:
+  #   container_name: video-py
+  #   # deploy:
+  #   #   replicas: 2
+  #   build:
+  #     context: ./python
+  #     dockerfile:  ../docker-support/vid.Dockerfile
+  #   volumes:
+  #     - ./python:/app
+  #     - ../cams:/input
+  #     - ../output:/output
+  #   runtime: nvidia
+  #   environment:
+  #     - DB_USER=postgres
+  #     - DB_HOST=192.168.164.189
+  #     - DB_DATABASE=intelligence
+  #     - DB_PASSWORD=password
+  #     - DB_PORT=5432
+  #     # rwa - trying to stop qt error
+  #     - QT_QPA_PLATFORM=offscreen
+  #     - NVIDIA_VISIBLE_DEVICES=all        
+
+  insight-face-py:
+    container_name: insight-face-py
+    build:
+      context: ./python
+      dockerfile: ../docker-support/if.Dockerfile
+    runtime: nvidia
+    environment:
+      - DB_USER=postgres
+      - DB_HOST=192.168.164.189
+      - DB_DATABASE=intelligence
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+    volumes:
+      - ./python:/app
+      - ../output:/output
+
+  # super-resolution-py:
+  #   container_name: super-resolution-py
+  #   build:
+  #     context: ./python
+  #     dockerfile: ../docker-support/sr.Dockerfile
+  #   # runtime: nvidia
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: all
+  #             capabilities: [gpu]    
+  #   environment:
+  #     - DB_USER=postgres
+  #     - DB_HOST=192.168.164.189
+  #     - DB_DATABASE=intelligence
+  #     - DB_PASSWORD=password
+  #     - DB_PORT=5432
+  #   volumes:
+  #     - ./python:/app
+  #     - ../output:/output
+
+  # new-super-resolution-py:
+  #   container_name: new-super-resolution-py
+  #   build:
+  #     context: ./python
+  #     dockerfile: ../docker-support/new_sr.Dockerfile
+  #   runtime: nvidia   
+  #   environment:
+  #     - DB_USER=postgres
+  #     - DB_HOST=192.168.164.189
+  #     - DB_DATABASE=intelligence
+  #     - DB_PASSWORD=password
+  #     - DB_PORT=5432
+  #   volumes:
+  #     - ./python:/app
+  #     - ../output:/output
+
+  similarity-process-py:
+    container_name: similarity-process-py
+    build:
+      context: ./python
+      dockerfile: ../docker-support/sp.Dockerfile
+    environment:
+      - DB_USER=postgres
+      - DB_HOST=192.168.164.189
+      - DB_DATABASE=intelligence
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+    volumes:
+      - ./python:/app
+      - ../output:/output
+
+  # data-retention-py:
+  #   container_name: data-retention-py
+  #   build:
+  #     context: ./python
+  #     dockerfile: ../docker-support/dr.Dockerfile
+  #   environment:
+  #     - DB_USER=postgres
+  #     - DB_HOST=192.168.164.189
+  #     - DB_DATABASE=intelligence
+  #     - DB_PASSWORD=password
+  #     - DB_PORT=5432
+  #   volumes:
+  #     - ./python:/app
+  #     - ../output:/output
+
+  backend:
+    container_name: backend
+    build: ./api
+    ports:
+      - "4300:4300"
+    depends_on:
+      - app-py
+    volumes:
+      - ../output:/output
+    environment:
+      - NODE_ENV=development
+      - LOGGING=true
+      - API_PORT=4300
+      # Database
+      - DB_DIALECT=postgres
+      - DB_USER=postgres
+      - DB_HOST=192.168.164.189
+      - DB_DATABASE=intelligence
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+      - SEQ_LOGGING=false
+      # Time format
+      - DATE_TIME_FORMAT=YYYY-MM-DD HH:mm
+      # Security
+      - ALLOW_ACCESS_ORIGIN_ALL=true
+      # EMAIL
+      - EMAIL_ENABLED=False
+      - EMAIL_HOST=smtp-mail.somemail.com
+      - EMAIL_PORT=587
+      - EMAIL_USER=
+      - EMAIL_PASSWORD=
+      - EMAIL_TO_ADDRESS=address1@address.com,address2@addres.com
+
+  frontend:
+    container_name: frontend
+    build: ./front-end
+    ports:
+      - "4000:3000"
+    environment:
+      # So that front end knows where api is
+      - REACT_APP_API_BASE_URL=http://localhost:4300/

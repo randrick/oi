@@ -1,0 +1,165 @@
+{
+  "generic": {
+    "close": "Sulje",
+    "save": "Tallenna",
+    "reject": "Hylkää",
+    "delete": "Poista",
+    "enabled": "Käytössä",
+    "loadingError": "Virhe ladatessa dataa",
+    "loading": "Ladataan",
+    "error": "Virhe",
+    "success": "Onnistui"
+  },
+  "navbar": {
+    "home": "Koti",
+    "cameras": "Kamerat",
+    "plates": "Kilvet",
+    "faces": "Kasvot",
+    "training": "Opettaminen",
+    "changeLanguage": "Vaihda kieltä",
+    "history": "Historia",
+    "configuration": "Konfigurointi",
+    "cleaning": "Siivoaminen"
+  },
+  "home": {
+    "calendar": {
+      "vehicle_activity": "Ajoneuvo aktiviteetti",
+      "originalLicensePlateImage": "Originaali kuva jossa kalenteri tapahtuman rekistrinumero on nähty"
+    },
+    "dateRangeSelector": {
+      "daysBetween": "Aikaväli"
+    },
+    "dateSelector": {
+      "selectedDay": "Valittu päivä",
+      "earlier": "Aikaisempi",
+      "next": "Seuraava"
+    },
+    "faceIdentity": {
+      "faceIdentifications": "Kasvon tunnistukset",
+      "faceIdentificationsFooter": "Kasvontunnistus on suuntaa-antava ja tulokset eivät ole tarkkoja",
+      "tryFaceDetectionAgain": "Yritä tunnistusta uudelleen tälle kuvalle?",
+      "loadDetections": "Lataa tunnistukset"
+    },
+    "instances": {
+      "runningInstances": "Ajossa olevat instanssit",
+      "process": "Prosessi",
+      "aliveCheck": "Raportoitu",
+      "started": "Käynnistetty",
+      "noProcesses": {
+        "title": "Ei prosessoreita",
+        "description": "Ei päällä olevia App.py prosessoreita!"
+      }
+    },
+    "labels": {
+      "labelViewer": "Leikekuvien katselu",
+      "noLabelSelected": "Ei valittua nimikettä",
+      "selectedLabel": "Valittu {{label}} nimike",
+      "activityBtn": "Aktiivisuus",
+      "activityForSelectedDate": "Aktiivisuus valitulle päivälle",
+      "showingActivityStartOfDay": "Näkymä näyttää aktiivisuuden valitun päivän alusta",
+      "srImage": "Tämä on prosessoitu super resoluutio kuva",
+      "standardImage": "Tämä on normaali kuva",
+      "loading": "Ladataan...",
+      "noLabels": "Ei nimikkeitä valitulle päivälle",
+      "storage": "TILA",
+      "imageDeleteSuccess": "Kuva poistettu",
+      "imageDeleteFailed": "Kuvan poisto epäonnistui"
+    }
+  },
+  "plates": {
+    "cars": {
+      "unknownCars": "Tuntemattomat kuljetusvälineet",
+      "byDefaultDescription": "Näkymä lataa vakiona vain tämän päivän kuljetusvälineet. Valitse kalenterista aikamääre ladataksesi enemmän.",
+      "requireAttentionDescription": "Tämä näkymä näyttää kuljetusvälineet jotka vaativat huomiotasi",
+      "addNewPlate": "Lisää uusi kilpi",
+      "addNewPlateDescription": "Lisää uusi kilpi perustuen automaattiseen esiluentaan. Korjaa luentaa tarpeen mukaan perustuen kuvaan. Rekiterikilven tieto annetaan ilman \"-\" merkkiä."
+    },
+    "owners": {
+      "vehicleOwners": "Kuljetusvälineen omistajat",
+      "searchFilter": "Haku...",
+      "addPlate": "Lisää kilpi",
+      "plate": "Kilpi",
+      "owner": "Omistaja",
+      "actions": "Toiminnot",
+      "vehicleCount": "Kuljetusvälineiden määrä: {{count}}",
+      "edit": "Muokkaa",
+      "remove": "Poista",
+      "editExistingPlate": "Muokkaa olemassa olevaa",
+      "editPlateDescription": "Olet muokkaamassa olemassa olevaa rekisterinumeroa. Rekiterikilven tieto annetaan ilman \"-\" merkkiä."
+    }
+  },
+  "faces": {
+    "earlier": "Aikaisempi",
+    "next": "Seuraava",
+    "modalOriginalImageDescription": "Originaali kuva jossa kasvo on tunnistettu",
+    "no_images": "Ei kasvokuvia saatavilla valitulle päivälle tai insight face prosessi ei ole toiminnassa"
+  },
+  "training": {
+    "personTraining": {
+      "title": "Henkilöiden kategorisointi ja opettaminen",
+      "clickImageDescription": "Paina kuvaa ja valitse kuka kuvassa on. Tietoa käytetään opetusmallin opettamiseen.",
+      "trainModel": "Opeta malli",
+      "loadMore": "Lataa lisää",
+      "deleteAllVisible": "Poista kaikki näkyvät"
+    },
+    "plateTraining": {
+      "plateTraining": "Kilpien opetus",
+      "plateTrainingDescription": "Kilpien opetus on saatavilla vain vanhalla jQuery versiolla. Avaa vanha versio napista.",
+      "openPlateTraining": "Avaa kilpien opetus"
+    }
+  },
+  "activityModal": {
+    "hourDataSet": "24-tunnin aktiviteetti"
+  },
+  "genericImageModal": {
+    "srVersion": "SR versio",
+    "normalVersion": "Normaali versio"
+  },
+  "plateEditModal": {
+    "licencePlate": "Rekisterinumero",
+    "ownerName": "Omistajan nimi",
+    "inputDescription": "Lisää ilman viivoja esim ABC123",
+    "ownerNameInputHelp": "Anna koko omistajan nimi",
+    "loadVehicleImage": "Lataa kuva ajoneuvosta"
+  },
+  "networkErrorIndicator": {
+    "checkYourConfig": "Tarkista configuraatiosi"
+  },
+  "history": {
+    "load": "Lataa",
+    "camera": "Kamera",
+    "cameraNameNotSelected": "Kameran nimi ei ole valittu"
+  },
+  "configuration": {
+    "pythonConfiguration": "Python konfiguraatio",
+    "saveChanges": "Tallenna muutokset",
+    "configurationSaved": "Konfiguraatio tallennettu",
+    "configurationSaveFailed": "Konfiguraation tallennus epäonnistui.",
+    "settings": "asetukset",
+    "moveToProcessedHint": "Päättää siirretäänkö prosessoidut kuvat /processed kansion alle samassa sijainnissa, josta kuvat ovat prosessoitu.",
+    "processSleepSecondsHint": "Kuinka kauan kuvia käsittelevän prosessin pitää nukkua ennen seuraavaa ajoa.",
+    "cv2ImshowEnabledHint": "Jos päällä, CV2 piirtää ikkunan, josta näet prosessoidun kuvan ja mitä kuvassa on nähty. Ei toimi konttiajo tilassa.",
+    "ignoredLabelsHint": "Yolo objektin tunnistus välttää seuraavat kategoriat. Erottele nimet pilkulla.",
+    "cameraNamesHint": "Kameroiden nimet. Kansiot määritellään alla. Erottele nimet pilkulla. Näitä asetuksia ei tulisi muuttaa myöhemmin.",
+    "cameraFoldersHint": "Where to load images from. Erottele nimet pilkulla. Can be changed later if location changes.",
+    "forPostgreSQL": "PostgreSQL:lle",
+    "openAlprEnabledHint": "Ohjelmisto rekisterinumeoiden tunnistukseen.",
+    "usePlateCharLengthHint": "Kustomoitu optio, joka saattaa vaikuttaa tunnistuksen tarkkuuteen.",
+    "faceRecognition": "Kasvontunnistus",
+    "outputRootPathHint": "cwd tarkoittaa 'current working directory'.",
+    "jpegStreamNamesHint": "Kamera striimin nimi. Erottele nimet pilkulla.",
+    "jpegStreamsHint": "Kamera striimin osoite. Kätevä työkalu kuvien tallentamiseen kamera lähetyksistä.",
+    "similarityProcess": "Samanlaisuus prosessi",
+    "deleteFilesHint": "Prosessi yrittää säästää tilaa etsimällä samanlaisia kuvia. Voit määritellä prosessin poistamaan kuvat lopullisesti, jos et tahdo varmuuden vuoksi tallentaa niitä.",
+    "superResolution": "Super resoluutio",
+    "useGpuHint": "GPU:n käyttö vaatii monimutkaisen CUDA asennuksen.",
+    "maxWidthHint": "Prosessi mahdollistaa rekisterinumeroiden paremman tunnistuksen pienistä kuvista.",
+    "currentConfigurationLooksHint": "Käytössä oleva konfiguraatio näyttää tältä",
+    "dataRetention": "Tietojen säilytys",
+    "dataRetentionEnabledHint": "Tietojen säilytys ominaisuus päällä tarkoittaa, että yli X päivää vanhat tiedot poistetaan.",
+    "dataRetentionDaysHint": "Määrä päiviä, jonka jälkeen tiedot poistetaan."
+  },
+  "cleaning": {
+    "title": "Siivoaminen"
+  }
+}

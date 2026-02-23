@@ -1,0 +1,65 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "./",
+  "scripts": {
+    "dev": "react-scripts start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test-ci": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "5.11.3",
+    "@fullcalendar/daygrid": "5.11.3",
+    "@fullcalendar/interaction": "5.11.3",
+    "@fullcalendar/react": "5.11.2",
+    "@fullcalendar/timegrid": "5.11.3",
+    "axios": "0.27.2",
+    "bootstrap": "5.2.1",
+    "chart.js": "3.9.1",
+    "dotenv": "16.0.3",
+    "i18next": "22.0.6",
+    "react": "18.2.0",
+    "react-bootstrap": "2.5.0",
+    "react-chartjs-2": "4.3.1",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "2.4.0",
+    "react-i18next": "11.18.6",
+    "react-redux": "8.0.4",
+    "react-router": "6.4.4",
+    "react-router-dom": "6.4.1",
+    "react-scripts": "5.0.1",
+    "redux": "4.2.0",
+    "redux-devtools-extension": "2.13.9",
+    "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@testing-library/user-event": "14.4.3",
+    "@types/jest": "29.1.1",
+    "@types/node": "18.11.10",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@types/react-redux": "7.1.24",
+    "@types/react-router-dom": "5.3.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+/*
+::-webkit-calendar-picker-indicator[id*=test] {
+  filter: invert(1);
+}
+*/
+
+.historyImages {
+  z-index: -10;
+}

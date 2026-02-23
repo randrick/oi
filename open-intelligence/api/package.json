@@ -1,0 +1,34 @@
+{
+  "name": "open-intelligence",
+  "version": "1.0.0",
+  "description": "Tools to process security camera motion triggered images and sort seen objects in different categories",
+  "main": "intelligence",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norkator/Open-Intelligence.git"
+  },
+  "author": "Norkator",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/norkator/Open-Intelligence/issues"
+  },
+  "homepage": "https://github.com/norkator/Open-Intelligence#readme",
+  "dependencies": {
+    "check-disk-space": "3.3.1",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "get-folder-size": "4.0.0",
+    "helmet": "6.0.1",
+    "image-thumbnail": "1.0.15",
+    "moment": "2.29.4",
+    "node-schedule": "2.1.0",
+    "nodemailer": "6.8.0",
+    "os-utils": "0.0.14",
+    "pg": "8.8.0",
+    "pgtools": "0.3.2",
+    "sequelize": "6.26.0"
+  }
+}
