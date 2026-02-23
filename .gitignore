@@ -1,6 +1,10 @@
 /cams/HikVision/*.jpg
-models/
-processed/
+*.params
+*.v1.t7
+*.caffemodel
+*.onnx
+yolov4.weights
+faces_db.pickle
 .devcontainer/
 .vscode/
 output/
