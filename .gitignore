@@ -1,5 +1,4 @@
-/cams/HikVision/*.jpg
-/cams/HikVision/processsed/
+/cams/HikVision/
 *.params
 *.v1.t7
 *.caffemodel

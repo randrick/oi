@@ -53,8 +53,7 @@ def detect_license_plate(image_fqfn):
             all_images = [image_fqfn]
             input_image = load_image(image_fqfn)
             # Todo.. make settings about this below feature, this is making process very very slow
-            rotation_images = []
-            get_rotation_images(input_image, image_fqfn)
+            rotation_images = get_rotation_images(input_image, image_fqfn)
             all_images = all_images + rotation_images  # append together
 
             # Initialize openalpr
